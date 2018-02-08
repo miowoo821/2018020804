@@ -7,18 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    MyReceiver receiver;
+    MyReceiver receiver;//新增這個剛剛創出來的廣播物件類別
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        receiver=new MyReceiver();
+        receiver=new MyReceiver();//新增這個剛剛創出來的廣播物件類別
     }
 
     public void click_regist(View v){
-        IntentFilter filter=new IntentFilter();
+        IntentFilter filter=new IntentFilter();//新增IntentFilter來放
         filter.addAction("myaction");
         filter.setPriority(500);
         registerReceiver(receiver,filter);
