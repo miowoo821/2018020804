@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void click_regist(View v){
         IntentFilter filter=new IntentFilter();//新增IntentFilter來放
-        filter.addAction("myaction");
+        filter.addAction("myaction");//填入要監聽的東西(觸發事件)
         filter.setPriority(500);
         registerReceiver(receiver,filter);
     }
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         unregisterReceiver(receiver);
     }
     public void click1(View v){
-        Intent intent=new Intent("myaction");
+        Intent intent=new Intent("myaction");//填入要給Intent處理的東西
         sendBroadcast(intent);
     }
 
