@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
         receiver=new MyReceiver();//新增這個剛剛創出來的廣播物件類別
     }
 
-    public void click_regist(View v){
+    public void click_regist(View v){//廣播接收器動態註冊
         IntentFilter filter=new IntentFilter();//新增IntentFilter來放
-        filter.addAction("myaction");//填入要監聽的東西(觸發事件)
+        filter.addAction(Intent.ACTION_SCREEN_ON);//填入要監聽的東西(要接收的廣播的action)
         filter.setPriority(500);
         registerReceiver(receiver,filter);
     }
